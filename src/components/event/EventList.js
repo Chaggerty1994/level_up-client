@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { getEvents } from "./EventManager.js"
 
 export const EventList = (props) => {
@@ -23,6 +23,10 @@ export const EventList = (props) => {
                         <div className="event__description">{event.description} by {event.organizer.user.username}</div>
                         <div className="event__date">{event.date}</div>
                         <div className="event__time">{event.time}</div>
+                        <Link to={`/events/${event.id}`}>
+                        <button className="update">Update event</button>
+                        </Link>
+                        <hr/>
                     </section>
                 })
             }

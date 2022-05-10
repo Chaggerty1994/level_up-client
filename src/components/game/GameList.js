@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import { getGames } from "./GameManager.js"
+import "./game.css"
 
 export const GameList = (props) => {
 
     const [games, setGames] = useState([])
 
     const history = useHistory()
-    
+
     useEffect(() => {
         getGames().then(data => setGames(data))
     }, [])

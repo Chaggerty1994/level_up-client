@@ -105,7 +105,7 @@ export const UpdateGame = () => {
                             setTitleEditing(null)
 
                         }}> Submit Edit</button> ) : (
-                    <button className="titlebutton" onClick={() => 
+                    <button className="button" onClick={() => 
                         setTitleEditing(selectedGame.id)}>Edit</button>
                 )
                 }
@@ -126,7 +126,7 @@ export const UpdateGame = () => {
                             setMakerEditing(null)
 
                         }}> Submit Edit</button> ) : (
-                    <button className="titlebutton" onClick={() => 
+                    <button className="button" onClick={() => 
                         setMakerEditing(selectedGame.id)}>Edit</button>
                 )
                 }
@@ -148,11 +148,11 @@ export const UpdateGame = () => {
                             setPlayersEditing(null)
 
                         }}> Submit Edit</button> ) : (
-                    <button className="titlebutton" onClick={() => 
+                    <button className="button" onClick={() => 
                         setPlayersEditing(selectedGame.id)}>Edit</button>
                 )
                 }
-               
+
                 <hr />
 
                 <h2 className="skillLevel">Skill Level</h2>
@@ -170,7 +170,7 @@ export const UpdateGame = () => {
                             setSkillEditing(null)
 
                         }}> Submit Edit</button> ) : (
-                    <button className="titlebutton" onClick={() => 
+                    <button className="button" onClick={() => 
                         setSkillEditing(selectedGame.id)}>Edit</button>
                 )
                 }
