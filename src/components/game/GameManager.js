@@ -17,17 +17,17 @@ export const getGameById = (gameId) => {
 }
 
 export const createGame = (game) => {
-    const fetchOption = {
+    return fetch("http://localhost:8000/games", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`,
+            "Content-Type": 'application/json'
         },
         body: JSON.stringify(game)
-    }
-    return fetch("http://localhost:8000/games",fetchOption)
-        .then(response => response.json())
+    })
+    .then(response => response.json())
 }
+
 
 export const getGameTypes = () => {
     return fetch("http://localhost:8000/gametypes", {
@@ -48,4 +48,14 @@ export const changeGame = (game) => {
         },
         body: JSON.stringify(game)
     })
+}
+
+export const deleteGame = (game) => {
+    return fetch(`http://localhost:8000/events/${game.id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+    
 }

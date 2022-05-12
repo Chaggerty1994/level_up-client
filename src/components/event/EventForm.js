@@ -65,7 +65,7 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="date">Date</label>
-                    <input type="text" name="date" className="form-control"
+                    <input type="date" name="date" className="form-control"
                         value={currentEvent.date}
                         onChange={changeEventState}
                         />
@@ -91,8 +91,8 @@ export const EventForm = () => {
                         description: currentEvent.description,
                         date: currentEvent.date,
                         game: parseInt(currentEvent.game),
-                        organizer: parseInt(localStorage.getItem('token')),
-                        time: parseInt(currentEvent.time)
+                        organizer: parseInt(localStorage.getItem("token")),
+                        time: currentEvent.time
                     }
 
                     // Send POST request to your API

@@ -10,8 +10,12 @@ export const GameList = (props) => {
 
     const history = useHistory()
 
-    useEffect(() => {
+    const loadGames = () => [
         getGames().then(data => setGames(data))
+    ]
+
+    useEffect(() => {
+        loadGames()
     }, [])
 
     return (
@@ -31,6 +35,7 @@ export const GameList = (props) => {
                         <Link to={`/games/${game.id}`}>
                         <button className="update">Update Game</button>
                         </Link>
+                        <button className="delete" onClick={() => deleteGame(game).then(loadGames)}>Delete Event</button>
                         <hr />
                     </section> 
                 })
